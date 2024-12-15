@@ -1,5 +1,5 @@
-﻿using Microsoft.Identity.Web;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Security.Cryptography.X509Certificates;
+using Microsoft.Identity.Web;
 
 namespace VerifierInsuranceCompany;
 

@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Globalization;
 using System.Net;
 using System.Net.Http.Headers;
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
 using VerifierInsuranceCompany.Services;
-using System.Text.Json;
-using System.Globalization;
-using Azure;
-using Microsoft.Extensions.Caching.Distributed;
 
 namespace VerifierInsuranceCompany;
 
@@ -115,7 +114,7 @@ public class VerifierController : Controller
             //the request will be deleted from the server immediately.
             //That's why it is so important to capture this callback and relay this to the UI so the UI can hide
             //the QR code to prevent the user from scanning it twice (resulting in an error since the request is already deleted)
-            if (verifierCallbackResponse != null  && verifierCallbackResponse.RequestStatus == VerifierConst.RequestRetrieved)
+            if (verifierCallbackResponse != null && verifierCallbackResponse.RequestStatus == VerifierConst.RequestRetrieved)
             {
                 var cacheData = new CacheData
                 {
@@ -172,8 +171,11 @@ public class VerifierController : Controller
             if (data != null)
             {
                 Debug.WriteLine("check if there was a response yet: " + data);
-                return new ContentResult { ContentType = "application/json",
-                    Content = JsonSerializer.Serialize(data) };
+                return new ContentResult
+                {
+                    ContentType = "application/json",
+                    Content = JsonSerializer.Serialize(data)
+                };
             }
 
             return Ok();

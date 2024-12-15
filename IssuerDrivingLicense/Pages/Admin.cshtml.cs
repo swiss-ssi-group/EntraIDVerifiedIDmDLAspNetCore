@@ -1,6 +1,6 @@
+using IssuerDrivingLicense.Persistence;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using IssuerDrivingLicense.Persistence;
 
 namespace IssuerDrivingLicense;
 

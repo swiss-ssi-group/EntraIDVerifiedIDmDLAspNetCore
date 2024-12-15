@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IssuerDrivingLicense.Persistence;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using IssuerDrivingLicense.Persistence;
 
 namespace IssuerDrivingLicense.Pages.DriverLicenses;
 
@@ -53,7 +53,7 @@ public class EditModel : PageModel
         if (DriverLicense != null)
         {
             var existingDriverLicense = await _context.DriverLicenses.FirstOrDefaultAsync(m => m.Id == DriverLicense.Id);
-            
+
             if (existingDriverLicense == null)
                 return NotFound();
 

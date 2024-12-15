@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-
 namespace IssuerDrivingLicense;
 
 public static class SecurityHeadersDefinitions
