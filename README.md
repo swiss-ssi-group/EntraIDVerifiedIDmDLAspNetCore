@@ -11,6 +11,7 @@
 
 ## History
 
+- 2024-12-15 .NET 9, Updated packages
 - 2023-07-29 Updated packages
 - 2023-06-24 Updated VC, using mDL based driving license
 - 2023-06-23 Update subject model, based on https://github.com/w3c-ccg/vdl-vocab/blob/main/context/v1.jsonld
