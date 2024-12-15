@@ -50,7 +50,7 @@ public class CreateModel : PageModel
         // TODO add other properties as needed
 
         _context.DriverLicenses.Add(DriverLicense);
-            await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         return RedirectToPage("./User", new { id = DriverLicense.UserName });
     }

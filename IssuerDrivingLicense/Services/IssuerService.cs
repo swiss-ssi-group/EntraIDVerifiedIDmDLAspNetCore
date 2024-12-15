@@ -1,10 +1,10 @@
+using System.Globalization;
+using System.Security.Cryptography;
 using IssuerDrivingLicense.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Client;
 using Microsoft.Identity.Web;
-using System.Globalization;
-using System.Security.Cryptography;
 
 namespace IssuerDrivingLicense;
 
